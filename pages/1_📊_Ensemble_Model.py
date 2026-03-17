@@ -2,11 +2,11 @@ import streamlit as st
 
 st.set_page_config(page_title="Ensemble Model", page_icon="📊", layout="wide")
 
-st.title("📊 Ensemble Model (Machine Learning)")
+st.title("Ensemble Model (Machine Learning)")
 st.markdown("---")
 
 # ── แนวทางการพัฒนา ──
-st.header("🎯 แนวทางการพัฒนา")
+st.header("แนวทางการพัฒนา")
 st.markdown("""
 เลือกใช้แนวทาง **Ensemble Learning** ซึ่งเป็นเทคนิคที่รวมโมเดลหลายตัวเข้าด้วยกัน 
 เพื่อให้ได้ผลลัพธ์ที่แม่นยำและเสถียรกว่าโมเดลเดี่ยว โดยใช้ **VotingRegressor** 
@@ -16,7 +16,7 @@ st.markdown("""
 st.markdown("---")
 
 # ── ทฤษฎีและอัลกอริทึม ──
-st.header("📚 ทฤษฎีและอัลกอริทึมที่ใช้")
+st.header("ทฤษฎีและอัลกอริทึมที่ใช้")
 
 st.subheader("1. Random Forest Regressor")
 st.markdown("""
@@ -52,7 +52,7 @@ st.markdown("""
 st.markdown("---")
 
 # ── การเตรียมข้อมูล ──
-st.header("🛠️ การเตรียมข้อมูล")
+st.header("การเตรียมข้อมูล")
 st.markdown("""
 1. โหลดข้อมูลที่ผ่านการ Preprocess แล้ว (มี Technical Indicators)
 2. เลือก Features: `Close, Volume, MA_7, MA_14, RSI, MACD`
@@ -69,7 +69,7 @@ y_train, y_test = y[:split_index], y[split_index:]
 st.markdown("---")
 
 # ── ขั้นตอนการพัฒนาโมเดล ──
-st.header("⚙️ ขั้นตอนการพัฒนาโมเดล")
+st.header("ขั้นตอนการพัฒนาโมเดล")
 st.markdown("""
 1. **สร้างโมเดล 3 ตัว**: Random Forest, Gradient Boosting, XGBoost
 2. **รวมด้วย VotingRegressor**: เฉลี่ยผลทำนายของ 3 โมเดล
@@ -91,7 +91,7 @@ ensemble.fit(X_train, y_train)
 st.markdown("---")
 
 # ── แหล่งอ้างอิง ──
-st.header("📖 แหล่งอ้างอิง")
+st.header("แหล่งอ้างอิง")
 st.markdown("""
 - Breiman, L. (2001). *Random Forests*. Machine Learning, 45(1), 5–32.
 - Friedman, J.H. (2001). *Greedy function approximation: A gradient boosting machine*. Annals of Statistics.

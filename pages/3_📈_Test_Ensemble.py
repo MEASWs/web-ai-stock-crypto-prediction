@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Test Ensemble", page_icon="📈", layout="wide")
 
-st.title("📈 ทดสอบโมเดล Ensemble")
+st.title("ทดสอบโมเดล Ensemble")
 st.markdown("---")
 
 st.markdown("""
@@ -46,7 +46,7 @@ if os.path.exists(model_path):
     model = joblib.load(model_path)
     predictions = model.predict(X_test)
 
-    st.subheader("📉 Actual vs Predicted")
+    st.subheader("Actual vs Predicted")
 
     fig, ax = plt.subplots(figsize=(12, 5))
     ax.plot(y_test.values, label="Actual", linewidth=1.5)
@@ -67,7 +67,7 @@ if os.path.exists(model_path):
     col2.metric("MAE", f"{mae:.2f}")
 
     # ── Show sample predictions ──
-    st.subheader("📋 ตัวอย่างผลทำนาย")
+    st.subheader("ตัวอย่างผลทำนาย")
     results = pd.DataFrame({
         "Actual": y_test.values,
         "Predicted": predictions,

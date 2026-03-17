@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 
 st.set_page_config(page_title="Test LSTM", page_icon="📉", layout="wide")
 
-st.title("📉 ทดสอบโมเดล LSTM")
+st.title("ทดสอบโมเดล LSTM")
 st.markdown("---")
 
 st.markdown("""
@@ -71,7 +71,7 @@ if os.path.exists(model_path) and os.path.exists(feature_scaler_path) and os.pat
     predictions = y_scaler.inverse_transform(predictions_scaled.reshape(-1, 1)).flatten()
     y_test_actual = y_scaler.inverse_transform(y_test_seq.reshape(-1, 1)).flatten()
 
-    st.subheader("📉 Actual vs Predicted")
+    st.subheader("Actual vs Predicted")
 
     fig, ax = plt.subplots(figsize=(12, 5))
     ax.plot(y_test_actual, label="Actual", linewidth=1.5)
@@ -92,7 +92,7 @@ if os.path.exists(model_path) and os.path.exists(feature_scaler_path) and os.pat
     col2.metric("MAE", f"{mae:.2f}")
 
     # ── Show sample predictions ──
-    st.subheader("📋 ตัวอย่างผลทำนาย")
+    st.subheader("ตัวอย่างผลทำนาย")
     results = pd.DataFrame({
         "Actual": y_test_actual,
         "Predicted": predictions,

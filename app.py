@@ -8,11 +8,11 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📈 Stock & Crypto Price Prediction")
+st.title("Stock & Crypto Price Prediction")
 st.markdown("---")
 
 # ── Project Overview ──
-st.header("🔎 Project Overview")
+st.header("Project Overview")
 st.markdown("""
 โปรเจกต์นี้เป็นการพัฒนาระบบทำนายราคาหุ้นและคริปโตเคอร์เรนซี โดยใช้โมเดล **Machine Learning (Ensemble)** 
 และ **Neural Network (LSTM)** เพื่อทำนายราคาปิดของวันถัดไป
@@ -26,7 +26,7 @@ st.markdown("""
 st.markdown("---")
 
 # ── Dataset Features ──
-st.header("📊 Features ของ Dataset")
+st.header("Features ของ Dataset")
 
 st.subheader("Features ดั้งเดิม (จาก Yahoo Finance)")
 st.markdown("""
@@ -58,7 +58,7 @@ st.code("features = ['Close', 'Volume', 'MA_7', 'MA_14', 'RSI', 'MACD']", langua
 st.markdown("---")
 
 # ── Data Preparation ──
-st.header("🛠️ การเตรียมข้อมูล")
+st.header("การเตรียมข้อมูล")
 st.markdown("""
 1. **ดาวน์โหลดข้อมูล** — ใช้ `yfinance` ดึงราคาหุ้นและคริปโตจาก Yahoo Finance
 2. **จัดการ Missing Values** — ใช้ Forward Fill (`ffill`) เติมค่าที่หายไป
@@ -70,7 +70,7 @@ st.markdown("""
 st.markdown("---")
 
 # ── Sample Data Preview ──
-st.header("👀 ตัวอย่างข้อมูล")
+st.header("ตัวอย่างข้อมูล")
 
 all_assets = [f.replace(".csv", "") for f in os.listdir("data/processed") if f.endswith(".csv")]
 stocks = [a for a in all_assets if not a.endswith("-USD")]
@@ -87,8 +87,8 @@ if selected:
     st.write(f"**จำนวนข้อมูล**: {len(df)} แถว, {len(df.columns)} คอลัมน์")
     st.dataframe(df.head(20), use_container_width=True)
 
-    st.subheader("📈 กราฟราคาปิด (Close)")
+    st.subheader("กราฟราคาปิด (Close)")
     st.line_chart(df.set_index(df.index)["Close"])
 
 st.markdown("---")
-st.markdown("📌 ใช้เมนูด้านซ้ายเพื่อดูรายละเอียดโมเดลและทดสอบการทำนาย")
+st.markdown("ใช้เมนูด้านซ้ายเพื่อดูรายละเอียดโมเดลและทดสอบการทำนาย")

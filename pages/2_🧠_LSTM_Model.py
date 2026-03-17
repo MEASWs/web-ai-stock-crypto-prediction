@@ -2,11 +2,11 @@ import streamlit as st
 
 st.set_page_config(page_title="LSTM Model", page_icon="🧠", layout="wide")
 
-st.title("🧠 LSTM Model (Neural Network)")
+st.title("LSTM Model (Neural Network)")
 st.markdown("---")
 
 # ── แนวทางการพัฒนา ──
-st.header("🎯 แนวทางการพัฒนา")
+st.header("แนวทางการพัฒนา")
 st.markdown("""
 เลือกใช้ **LSTM (Long Short-Term Memory)** ซึ่งเป็น Neural Network ประเภท Recurrent Neural Network (RNN) 
 ที่ออกแบบมาเพื่อจัดการกับข้อมูลแบบ **Time Series** โดยเฉพาะ เพราะสามารถจดจำ Pattern 
@@ -16,7 +16,7 @@ st.markdown("""
 st.markdown("---")
 
 # ── ทฤษฎีและอัลกอริทึม ──
-st.header("📚 ทฤษฎีและอัลกอริทึมที่ใช้")
+st.header("ทฤษฎีและอัลกอริทึมที่ใช้")
 
 st.subheader("LSTM (Long Short-Term Memory)")
 st.markdown("""
@@ -38,7 +38,7 @@ LSTM เป็น RNN แบบพิเศษที่แก้ปัญหา 
 st.markdown("---")
 
 # ── สถาปัตยกรรมโมเดล ──
-st.header("🏗️ สถาปัตยกรรมโมเดล")
+st.header("สถาปัตยกรรมโมเดล")
 st.markdown("""
 โมเดลที่ออกแบบมีโครงสร้างดังนี้:
 
@@ -63,7 +63,7 @@ model.compile(optimizer='adam', loss='mse')
 st.markdown("---")
 
 # ── การเตรียมข้อมูล ──
-st.header("🛠️ การเตรียมข้อมูล")
+st.header("การเตรียมข้อมูล")
 st.markdown("""
 1. โหลดข้อมูลที่ผ่าน Preprocess แล้ว
 2. เลือก Features: `Close, Volume, MA_7, MA_14, RSI, MACD` (6 features)
@@ -85,7 +85,7 @@ def create_sequences(X, y, time_steps=10):
 st.markdown("---")
 
 # ── ขั้นตอนการพัฒนาโมเดล ──
-st.header("⚙️ ขั้นตอนการพัฒนาโมเดล")
+st.header("ขั้นตอนการพัฒนาโมเดล")
 st.markdown("""
 1. **Scale ข้อมูล** ด้วย MinMaxScaler (แยก scaler สำหรับ features และ target)
 2. **สร้าง Sequences** ขนาด 10 time steps (ใช้ 10 วันทำนาย 1 วัน)
@@ -102,7 +102,7 @@ st.markdown("""
 st.markdown("---")
 
 # ── แหล่งอ้างอิง ──
-st.header("📖 แหล่งอ้างอิง")
+st.header("แหล่งอ้างอิง")
 st.markdown("""
 - Hochreiter, S., & Schmidhuber, J. (1997). *Long Short-Term Memory*. Neural Computation, 9(8), 1735–1780.
 - [TensorFlow/Keras Documentation](https://www.tensorflow.org/api_docs/python/tf/keras)
